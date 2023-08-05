@@ -1,0 +1,6 @@
+package-lock.json
+src/assets/*
+scripts/*
+log/*
+node_modules/*
+.*
