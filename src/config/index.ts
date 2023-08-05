@@ -23,7 +23,7 @@ export function getConfigs() {
   const infura = {
     apiKey: process.env.infuraApiKey,
     // ethereum: 'homestead', // for testnet, change the value to 'goerli'
-    ethereum: 'goerli',
+    network: 'goerli',
   };
 
   return {

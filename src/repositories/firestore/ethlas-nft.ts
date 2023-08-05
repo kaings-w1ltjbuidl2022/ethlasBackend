@@ -18,7 +18,7 @@ export class EthlasNFTRepository extends BaseRepository<EthlasNFT> {
   }
 
   async create(data: EthlasNFT) {
-    await setDoc(doc(this._collectionRef, data.id.toString()), { ...data });
+    await setDoc(doc(this._collectionRef, data.id), { ...data });
     // return await addDoc(this._collectionRef, data);
   }
 

@@ -1,8 +1,7 @@
 export type EthlasNFT = {
-  id: number;
+  id: string;
   name: string;
   contractAddress: string;
   ownerAddress: string;
-  mintReceipt: object;
-  transferReceipt: object[];
+  transferReceipts: string[];
 };
