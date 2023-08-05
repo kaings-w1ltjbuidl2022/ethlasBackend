@@ -6,6 +6,8 @@
   "scripts": {
     "build": "tsc",
     "lint": "eslint --fix src",
+    "dev:api": "nodemon src/api/index.ts",
+    "dev:websocket": "nodemon src/websocket/index.ts",
     "test": ""
   },
   "keywords": [],
