@@ -6,18 +6,13 @@ import {
   setDoc,
   updateDoc,
 } from 'firebase/firestore';
-import { BaseRepository } from './base';
 import { Nft } from '../../types';
 import { NftFilter, NftRepository } from '../nft';
 
-export class FirestoreEthlasNFTRepository
-  extends BaseRepository<Nft>
-  implements NftRepository
-{
+export class FirestoreEthlasNFTRepository implements NftRepository {
   private readonly _collectionRef: CollectionReference;
 
   constructor(collectionRef: CollectionReference) {
-    super();
     this._collectionRef = collectionRef;
   }
 
