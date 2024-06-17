@@ -1,6 +1,6 @@
 import type { NextFunction, Request, Response } from 'express';
 import { EthlasNFTService } from '../../services/ethlas-nft';
-import { EthlasNFT } from '../../types';
+import { Nft } from '../../types';
 
 export class EthlasNFTController {
   private readonly _service: EthlasNFTService;
@@ -10,7 +10,7 @@ export class EthlasNFTController {
   }
 
   getMintedNFTs = async (req: Request, res: Response, next: NextFunction) => {
-    let nfts: EthlasNFT[];
+    let nfts: Nft[];
     try {
       nfts = await this._service.getAll();
     } catch (err) {
@@ -22,7 +22,7 @@ export class EthlasNFTController {
 
   getMintedNFT = async (req: Request, res: Response, next: NextFunction) => {
     const id = req.query.id?.toString() || '';
-    let nft: EthlasNFT | null;
+    let nft: Nft | null;
     try {
       if (id.length <= 0) {
         throw new Error('invalid tokenId');

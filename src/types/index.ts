@@ -1,4 +1,4 @@
-export type EthlasNFT = {
+export type Nft = {
   id: string;
   name: string;
   contractAddress: string;
