@@ -1,11 +1,11 @@
 import Big from 'big.js';
 import { ETHLS } from '../assets/erc721';
-import { FirestoreEthlasNFTRepository } from '../repositories/firestore/ethlas-nft';
 import { Nft } from '../types';
+import { NftRepository } from '../repositories/nft';
 
-export class EthlasNFTService {
-  private readonly _repository: FirestoreEthlasNFTRepository;
-  constructor(repository: FirestoreEthlasNFTRepository) {
+export class NftService {
+  private readonly _repository: NftRepository;
+  constructor(repository: NftRepository) {
     this._repository = repository;
   }
 

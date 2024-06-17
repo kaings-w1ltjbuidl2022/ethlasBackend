@@ -1,11 +1,11 @@
 import type { NextFunction, Request, Response } from 'express';
-import { EthlasNFTService } from '../../services/ethlas-nft';
+import { NftService } from '../../services/nft';
 import { Nft } from '../../types';
 
-export class EthlasNFTController {
-  private readonly _service: EthlasNFTService;
+export class NftController {
+  private readonly _service: NftService;
 
-  constructor(service: EthlasNFTService) {
+  constructor(service: NftService) {
     this._service = service;
   }
 

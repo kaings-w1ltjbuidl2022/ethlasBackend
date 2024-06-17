@@ -1,12 +1,14 @@
 import { initRepositories } from '../repositories';
-import { EthlasNFTService } from './ethlas-nft';
+import { NftService } from './nft';
+
+export type Services = {
+  nftService: NftService;
+};
 
 export function initServices(
   repositories: ReturnType<typeof initRepositories>,
-) {
-  const ethlasNFTService = new EthlasNFTService(
-    repositories.ethlasNFTRepository,
-  );
+): Services {
+  const nftService = new NftService(repositories.nftRepository);
 
-  return { ethlasNFTService };
+  return { nftService };
 }

@@ -1,10 +1,14 @@
 import { initServices } from '../../services';
-import { EthlasNFTController } from './ethlas-nft';
+import { NftController } from './nft';
 
-export function initControllers(services: ReturnType<typeof initServices>) {
-  const ethlasNFTController = new EthlasNFTController(
-    services.ethlasNFTService,
-  );
+export type Controllers = {
+  nftController: NftController;
+};
 
-  return { ethlasNFTController };
+export function initControllers(
+  services: ReturnType<typeof initServices>,
+): Controllers {
+  const nftController = new NftController(services.nftService);
+
+  return { nftController };
 }

@@ -6,6 +6,7 @@ import { initRepositories } from '../repositories';
 import { Injector } from '../utils';
 import { initServices } from '../services';
 import { initControllers } from './controllers';
+import { initRoutes } from './routes';
 
 const configs = getConfigs();
 const dbConfig = initializeApp(configs.firebase);
@@ -18,15 +19,14 @@ injector.set('configs', configs);
 const repositories = initRepositories(injector);
 const services = initServices(repositories);
 const controllers = initControllers(services);
+const router = initRoutes(controllers);
 
 const app: Express = express();
 const HOST = process.env.HOST;
 const PORT = process.env.API_PORT;
 
 app.use(express.json());
-
-app.get('/api/v1/ethlasnfts', controllers.ethlasNFTController.getMintedNFTs);
-app.get('/api/v1/ethlasnft', controllers.ethlasNFTController.getMintedNFT);
+app.use('/api/v1', router);
 
 app.listen(PORT, async () => {
   if (!HOST || !PORT) {

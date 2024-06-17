@@ -8,7 +8,7 @@ export function mintSubscriptions(
   providers.infuraProvider.mintSubscription(
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     async (_from: string, to: string, tokenId: Big, event: any) => {
-      await services.ethlasNFTService.onMinted(_from, to, tokenId, event);
+      await services.nftService.onMinted(_from, to, tokenId, event);
     },
   );
 }
